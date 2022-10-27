@@ -1,0 +1,49 @@
+---
+
+  - name: Install Elastic Search, Kibana and Logstash for Ubuntu server
+    apt:
+      name: 
+        - elasticsearch
+        - kibana
+        - logstash
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Start Elastic Search (Ubuntu)
+    service:
+      name: elasticsearch
+      state: started
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Start Kibana (Ubuntu)
+    service:
+      name: kibana
+      state: started
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Start Logstash (Ubuntu)
+    service:
+      name: logstash
+      state: started
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Install Elastic Search, Kibana and Logstash for CentOS server
+    dnf:
+      name:
+        - elasticsearch
+        - kibana
+        - logstash
+      state: latest
+    when: ansible_distribution == "CentOS"
+
+  - name: Start Elastic Search (CentOS)
+    service:
+      name: elasticsearch
+      state: started
+    when: ansible_distribution == "CentOS"
+
+  - name: Start Kibana (CentOS)
+    service:
+      name: kibana
+      state: started
+    when: ansible_distribution == "CentOS"

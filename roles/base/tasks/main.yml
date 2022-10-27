@@ -1,0 +1,14 @@
+---
+  
+  - name: Updates (Ubuntu)
+    apt:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Update Repository Index (CentOS)
+    dnf:
+      update_cache: yes
+    changed_when: false
+    when: ansible_distribution == "CentOS"
+

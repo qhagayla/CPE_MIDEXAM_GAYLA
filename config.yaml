@@ -1,0 +1,36 @@
+---
+
+- hosts: remote_servers
+  become: true
+  roles:
+    -  base
+
+- hosts: elasticstack_servers
+  become: true
+  roles:
+    -  elasticstack_servers
+
+- hosts: nagios_server
+  become: true
+  roles:
+    -  nagios_server
+
+- hosts: grafana_servers
+  become: true
+  roles:
+    -  grafana_servers
+
+- hosts: prometheus_servers
+  become: true
+  roles:
+    -  prometheus_servers
+
+- hosts: influxdb_servers
+  become: true
+  roles:
+    -  influxdb_servers
+
+- hosts: lampstack_servers
+  become: true
+  roles:
+    -  lampstack_servers
